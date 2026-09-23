@@ -1,7 +1,19 @@
 terraform {
   backend "s3" {
     bucket = "sctp-tfstate-ce13"
-    key    = "tagitables/devsecops-3.1/terraform.tfstate"
+    key    = "tag/devsecops-3.1/terraform.tfstate"
     region = "us-east-1"
+  }
+}
+
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_s3_bucket" "workshop" {
+  bucket_prefix = "tag-devsecops-workshop-"
+
+  tags = {
+    Name = "tag-devsecops-workshop"
   }
 }
