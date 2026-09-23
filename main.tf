@@ -14,6 +14,6 @@ resource "aws_s3_bucket" "workshop" {
   bucket_prefix = "tag-devsecops-workshop-"
 
   tags = {
-    Name = "tag-devsecops-workshop"
+    Purpose = "github-actions-workshop"
   }
 }
